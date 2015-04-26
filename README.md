@@ -1,6 +1,6 @@
 # Activerecord::Nulls
 
-TODO: Write a gem description
+A little bit of syntactic sugar for null objects in activerecord
 
 ## Installation
 
@@ -20,7 +20,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Given:
+```ruby
+class NullRecord
+end
+
+class Record < ActiveRecord::Base
+  null NullRecord
+end
+```
+```ruby
+Record.find(-1)
+=> #<NullRecord:0x007fe0ea326360>
+```
 
 ## Contributing
 
